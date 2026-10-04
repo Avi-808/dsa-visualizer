@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f4f7fb" />
+    <meta name="description" content="An interactive visual guide to sorting and searching algorithms." />
+    <title>DSA Studio — Learn by watching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="DSA Studio home"><span class="brand-mark">⌘</span><span>DSA<span class="brand-light">Studio</span></span></a>
+      <nav class="topnav" aria-label="Main navigation"><a class="active" href="#visualizer">Visualizer</a><a href="#guide">Algorithm guide</a></nav>
+      <a class="github-link" href="https://github.com" target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="visualizer">
+      <section class="intro">
+        <div class="eyebrow"><span class="pulse"></span> INTERACTIVE LEARNING LAB</div>
+        <h1>Algorithms, <span>made visible.</span></h1>
+        <p>Watch each comparison, swap, and decision unfold. Change the input, control the pace, and build an intuition for how algorithms work.</p>
+      </section>
+
+      <section class="workspace" aria-label="Algorithm visualizer">
+        <div class="panel-head">
+          <div class="panel-title"><span class="step-icon">01</span><div><h2>Sorting playground</h2><p>Choose an algorithm and press play</p></div></div>
+          <div class="status"><span class="status-dot"></span><span id="statusText">Ready to sort</span></div>
+        </div>
+        <div class="controls">
+          <label class="field algorithm-field">Algorithm<select id="algorithm"><option value="bubble">Bubble sort</option><option value="selection">Selection sort</option><option value="insertion">Insertion sort</option><option value="quick">Quick sort</option></select></label>
+          <label class="field size-field">Array size <span id="sizeValue" class="field-value">32</span><input id="size" type="range" min="8" max="64" value="32" /></label>
+          <label class="field speed-field">Speed <span id="speedValue" class="field-value">1×</span><input id="speed" type="range" min="1" max="5" value="3" /></label>
+          <button id="shuffle" class="button button-soft" type="button"><span aria-hidden="true">⤨</span> Shuffle</button>
+        </div>
+        <div class="chart-wrap">
+          <div class="chart-labels"><span>VALUE</span><span id="stepCount">0 OPERATIONS</span></div>
+          <div id="bars" class="bars" role="img" aria-label="Array values shown as vertical bars"></div>
+          <div class="legend"><span><i class="legend-default"></i>Unsorted</span><span><i class="legend-active"></i>Comparing</span><span><i class="legend-done"></i>Sorted</span></div>
+        </div>
+        <div class="playback">
+          <div class="playback-buttons"><button id="reset" class="icon-button" type="button" aria-label="Reset array" title="Reset">↺</button><button id="play" class="button button-primary" type="button"><span id="playIcon">▶</span><span id="playLabel">Start sorting</span></button><button id="step" class="icon-button" type="button" aria-label="Step forward" title="Step forward">→|</button></div>
+          <div class="progress-area"><div class="progress-meta"><span id="progressLabel">Progress</span><span id="progressPercent">0%</span></div><div class="progress-track"><div id="progressBar" class="progress-bar"></div></div></div>
+        </div>
+      </section>
+
+      <section id="guide" class="guide-section">
+        <div class="section-heading"><div><div class="eyebrow">THE TOOLKIT</div><h2>Pick your approach.</h2></div><span class="section-note">Four ways to put values in order</span></div>
+        <div class="algorithm-cards">
+          <article class="algo-card selected" data-algo="bubble"><div class="card-top"><span class="algo-number">01</span><span class="complexity">O(n²)</span></div><h3>Bubble sort</h3><p>Repeatedly compare neighbors and swap out-of-order pairs. Simple to follow, slow on large lists.</p><div class="card-bottom"><span>Stable</span><span>Beginner</span></div></article>
+          <article class="algo-card" data-algo="selection"><div class="card-top"><span class="algo-number">02</span><span class="complexity">O(n²)</span></div><h3>Selection sort</h3><p>Find the smallest remaining value and move it into its final position on each pass.</p><div class="card-bottom"><span>In-place</span><span>Beginner</span></div></article>
+          <article class="algo-card" data-algo="insertion"><div class="card-top"><span class="algo-number">03</span><span class="complexity">O(n²)</span></div><h3>Insertion sort</h3><p>Grow a sorted section one value at a time by inserting each new value in the right place.</p><div class="card-bottom"><span>Stable</span><span>Beginner</span></div></article>
+          <article class="algo-card" data-algo="quick"><div class="card-top"><span class="algo-number">04</span><span class="complexity">O(n log n)</span></div><h3>Quick sort</h3><p>Partition around a pivot, then sort each side. Often fast in practice; worst case is O(n²).</p><div class="card-bottom"><span>Divide & conquer</span><span>Intermediate</span></div></article>
+        </div>
+      </section>
+      <footer><span>Built to make the invisible steps easier to see.</span><span>DSA Studio <span class="footer-dot">●</span> v1.0</span></footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
