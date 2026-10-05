@@ -2,6 +2,8 @@
 
 An interactive, dependency-free visualizer for learning how sorting algorithms work. Adjust the array and playback speed, then watch comparisons, swaps, pivots, and sorted positions update one step at a time.
 
+**[Open the live demo](https://avi-808.github.io/dsa-visualizer/)**
+
 ## Algorithms
 
 | Algorithm | Average time | Extra space | Notes |
@@ -37,3 +39,4 @@ app.js       Sorting operation generation and playback
 ## License
 
 MIT. See [LICENSE](LICENSE).
+
